@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Results summary component</title>
+
+  
+</head>
+<body>
+  <main>
+    <div class="result-summary bg-neutral-100 center">
+      <div class="summary__overview grid-group">
+        <h1 class="fs-heading-primary">Your Result</h1>
+        <div class="summary__rating">
+          <p class="text-neutral-200"><span class="text-neutral-100 fs-large fw-extra-bold">76</span>of 100</p>
+        </div>
+        <h2 class="fs-heading-primary text-neutral-100">Great</h2>
+        <p>You scored higher than 65% of the people who have taken these tests</p>
+      </div>
+      <div class="summary__stats grid-group">
+        <h3 class="fs-heading-primary text-neutral-800">Summary</h3>
+        <div class="tests grid-group">
+          <div class="test test-1">
+              <span class="test__type"><img src="/assets/images/icon-reaction.svg" alt="icon-reaction"></span>
+              <p class="test__type">Reaction</p>
+              <p class="test__result"><span>80</span> / 100</p>            
+          </div>
+          <div class="test test-2">            
+              <span class="test__type"><img src="/assets/images/icon-memory.svg" alt="icon-memory"></span>
+              <p class="test__type">Memory</p>            
+              <p class="test__result"><span>92</span> / 100</p>            
+          </div>
+          <div class="test test-3">            
+              <span class="test__type"><img src="/assets/images/icon-verbal.svg" alt="icon-verbal"></span>
+              <p class="test__type">Verbal</p>           
+              <p class="test__result"><span>61</span> / 100</p>
+          </div>
+          <div class="test test-4">            
+              <span class="test__type"><img src="/assets/images/icon-visual.svg" alt="icon-visual"></span>
+              <p class="test__type">Visual</p>            
+              <p class="test__result"><span>72</span> / 100</p>
+          </div>
+        </div>
+        <button class="button text-neutral-100">Continue</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

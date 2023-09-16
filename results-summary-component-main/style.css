@@ -1,0 +1,291 @@
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url(/assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+:root {
+    /* color variables */
+    --clr-test-1: hsl(0, 100%, 67%);
+    --clr-test-2: hsl(39, 100%, 56%);
+    --clr-test-3: hsl(166, 100%, 37%);
+    --clr-test-4: hsl(234, 85%, 45%);
+
+    --clr-bg-test-1: hsl(0, 100%, 95%);
+    --clr-bg-test-2: hsl(39, 100%, 95%);
+    --clr-bg-test-3: hsl(166, 100%, 95%);
+    --clr-bg-test-4: hsl(234, 85%, 95%);
+
+    --clr-bg-gradient-1: hsl(252, 100%, 67%);
+    --clr-bg-gradient-2: hsl(241, 81%, 54%);
+
+    --clr-circle-gradient-1: hsla(256, 72%, 46%, 1);
+    --clr-circle-gradient-2: hsla(241, 72%, 46%, 0);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-150: hsl(221, 100%, 96%);
+    --clr-neutral-200: hsl(241, 100%, 89%);
+    --clr-neutral-800: hsl(224, 30%, 27%);
+
+    /* typography variables */
+    --ff-primary: 'Hanken Grotesk';
+
+    --fw-800: 800;
+    --fw-700: 700;
+    --fw-500: 500;
+
+    --fs-18: 1.125rem;
+    --fs-20: 1.4rem;
+    --fs-44: 3.7rem;
+
+    --fs-body: var(--fs-18);
+    --fs-heading-primary: var(--fs-20);
+}
+
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    font-size: inherit;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+/* Make images easier to work with */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    html {
+        scroll-behavior: initial;
+    }
+}
+
+/* utility classes */
+.text-neutral-100 {
+    color: var(--clr-neutral-100);
+}
+
+.text-neutral-800 {
+    color: var(--clr-neutral-800);
+}
+
+.bg-neutral-100 {
+    background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-150 {
+    background-color: var(--clr-neutral-150);
+}
+
+.test-1 {
+    color: var(--clr-test-1);
+    background-color: var(--clr-bg-test-1);
+}
+
+.test-2 {
+    color: var(--clr-test-2);
+    background-color: var(--clr-bg-test-2);
+}
+
+.test-3 {
+    color: var(--clr-test-3);
+    background-color: var(--clr-bg-test-3);
+}
+
+.test-4 {
+    color: var(--clr-test-4);
+    background-color: var(--clr-bg-test-4);
+}
+
+.fw-extra-bold {
+    font-weight: var(--fw-800);
+}
+
+.fs-heading-primary {
+    font-size: var(--fs-heading-primary);
+}
+
+.fs-large {
+    font-size: var(--fs-44);
+}
+
+.grid-group {
+    display: grid;
+    gap: 1rem;
+}
+
+.center {
+    text-align: center;
+}
+
+/* general styling */
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-500);
+    color: var(--clr-neutral-200);
+    background-color: var(--clr-neutral-150);
+}
+
+.result-summary {
+    --border-radius: 2rem;
+
+    border-radius: 0 0 var(--border-radius)var(--border-radius);
+}
+
+@media (min-width: 600px) {
+    body {
+        display: grid;
+        place-items: center;
+    }
+
+    .result-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        max-width: 42rem;
+        border-radius: var(--border-radius);
+    }
+}
+
+.summary__overview,
+.summary__stats {
+    padding: 1.5rem;
+}
+
+.summary__overview {
+    background-image: linear-gradient(var(--clr-bg-gradient-1), var(--clr-bg-gradient-2));
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+@media (min-width: 600px) {
+    .summary__overview,
+    .summary__stats {
+        padding: 2rem;
+    }
+
+    .summary__overview {
+        border-radius: var(--border-radius);
+        padding: 3rem;
+    }
+}
+
+.summary__rating {
+    background-image: linear-gradient(var(--clr-circle-gradient-1), var(--clr-circle-gradient-2));
+}
+
+.tests {
+    display: grid;
+    gap: .7rem;
+}
+
+.test {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto 1fr auto;
+    word-wrap: wrap;
+    align-items: center;
+
+    padding: .8rem 1rem;
+
+    border-radius: 10px;
+}
+
+.test__type {
+    text-align: left;
+}
+
+.summary__rating {
+    display: grid;
+    place-items: center;
+
+    width: 10rem;
+    aspect-ratio: 1/1;
+    margin-inline: auto;
+
+    border-radius: 50%;
+}
+
+.summary__rating span {
+    display: block;
+    line-height: 1;
+}
+
+.summary__stats {
+    display: grid;
+    gap: 2rem;
+}
+
+.summary__stats h3 {
+    text-align: left;
+}
+
+.test__result {
+    color: hsla(224, 30%, 27%, .5);
+}
+
+.test__result span {
+    color: var(--clr-neutral-800);
+}
+
+.button {
+    background-color: var(--clr-neutral-800);
+    border-radius: 100vw;
+    padding: .7rem 1.5rem;
+}
