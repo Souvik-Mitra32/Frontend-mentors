@@ -1,0 +1,114 @@
+
+:root {
+    --clr-primary-800: hsl(179, 100%, 13%);
+    --clr-primary-600: hsl(184, 100%, 22%);
+    --clr-primary-300: hsl(31, 77%, 52%);
+
+    --hsl-neutral-100: 0, 0%, 100%;
+
+    --clr-neutral-150: hsl(0, 0%, 95%);
+    --clr-neutral-100: hsl(var(--hsl-neutral-100), .55);
+
+    --ff-heading: 'Big Shoulders Display';
+    --ff-body: 'Lexend Deca';
+
+    --fw-bold: 700;
+    --fw-normal: 400;
+
+    --fs-200: .938rem;
+    --fs-300: 1rem;
+    --fs-500: 1.875rem;
+}
+
+/* utility classes */
+.text-primary-800 {
+    color: var(--clr-primary-800);
+}
+
+.text-primary-600 {
+    color: var(--clr-primary-600);
+}
+
+.text-primary-300 {
+    color: var(--clr-primary-300);
+}
+
+.bg-primary-800 {
+    background-color: var(--clr-primary-800);
+}
+
+.bg-primary-600 {
+    background-color: var(--clr-primary-600);
+}
+
+.bg-primary-300 {
+    background-color: var(--clr-primary-300);
+}
+
+/* general styling */
+body {
+    font-family: var(--ff-body);
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-200);
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-neutral-150);
+    display: grid;
+    place-items: center;
+}
+
+main {
+    padding: 5rem 2rem;
+}
+
+.container {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card {
+    display: grid;
+    gap: 1rem;
+    padding: 2.5rem;
+}
+
+.card__title {
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-500);
+    color: var(--clr-neutral-150);
+    text-transform: uppercase;
+}
+
+.button {
+    padding: .6rem 1.5rem;
+    background-color: var(--clr-neutral-150);
+    border: 2px solid transparent;
+    border-radius: 100vw;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: var(--clr-neutral-150);
+    background-color: transparent;
+    border: 2px solid var(--clr-neutral-150);
+}
+
+@media (width > 55rem) {
+    main {
+        max-width: 48rem;
+        padding: 4rem 1rem;
+    }
+
+    .container {
+        display: grid;
+        grid-auto-flow: column;
+    }
+
+    .card {
+        gap: 1rem;
+    }
+
+    .container div:not([class]) {
+        padding-top: 1rem;
+    }
+}
